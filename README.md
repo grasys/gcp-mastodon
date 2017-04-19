@@ -1,2 +1,2 @@
 # gcp-mastdon
-Google Cloud PlatformでMastdon！
+Google Cloud PlatformでMastodon！
