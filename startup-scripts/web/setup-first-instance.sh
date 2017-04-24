@@ -35,11 +35,11 @@ sudo sed -i -e "s/#backend_port0[\ ]*=[\ ]*5432/backend_port0 = 5432/g" /etc/pgp
 sudo sed -i -e "s/#backend_weight0[\ ]*=[\ ]*1/backend_weight0 = 1/g" /etc/pgpool2/pgpool.conf
 sudo sed -i -e "s;#backend_data_directory0[\ ]*=[\ ]*'/data';backend_data_directory0 = '/usr/local/var/postgresql/main';g" /etc/pgpool2/pgpool.conf
 sudo sed -i -e "s/#backend_flag0[\ ]*=[\ ]*'ALLOW_TO_FAILOVER'/backend_flag0 = 'ALLOW_TO_FAILOVER'/g" /etc/pgpool2/pgpool.conf
-sudo sed -i -e "s/#backend_hostname1[\ ]*=[\ ]*'host2'/backend_hostname1 = 'prd-db002'/g" /etc/pgpool2/pgpool.conf
-sudo sed -i -e "s/#backend_port1[\ ]*=[\ ]*5433/backend_port1 = 5432/g" /etc/pgpool2/pgpool.conf
-sudo sed -i -e "s/#backend_weight1[\ ]*=[\ ]*1/backend_weight1 = 1/g" /etc/pgpool2/pgpool.conf
-sudo sed -i -e "s;#backend_data_directory1[\ ]*=[\ ]*'/data1';backend_data_directory1 = '/usr/local/var/postgresql/main';g" /etc/pgpool2/pgpool.conf
-sudo sed -i -e "s/#backend_flag1[\ ]*=[\ ]*'ALLOW_TO_FAILOVER'/backend_flag1 = 'ALLOW_TO_FAILOVER'/g" /etc/pgpool2/pgpool.conf
+#sudo sed -i -e "s/#backend_hostname1[\ ]*=[\ ]*'host2'/backend_hostname1 = 'prd-db002'/g" /etc/pgpool2/pgpool.conf
+#sudo sed -i -e "s/#backend_port1[\ ]*=[\ ]*5433/backend_port1 = 5432/g" /etc/pgpool2/pgpool.conf
+#sudo sed -i -e "s/#backend_weight1[\ ]*=[\ ]*1/backend_weight1 = 1/g" /etc/pgpool2/pgpool.conf
+#sudo sed -i -e "s;#backend_data_directory1[\ ]*=[\ ]*'/data1';backend_data_directory1 = '/usr/local/var/postgresql/main';g" /etc/pgpool2/pgpool.conf
+#sudo sed -i -e "s/#backend_flag1[\ ]*=[\ ]*'ALLOW_TO_FAILOVER'/backend_flag1 = 'ALLOW_TO_FAILOVER'/g" /etc/pgpool2/pgpool.conf
 sudo sed -i -e "s/enable_pool_hba[\ ]*=[\ ]*off/enable_pool_hba = on/g" /etc/pgpool2/pgpool.conf
 sudo sed -i -e "s/pool_passwd[\ ]*=[\ ]*'pool_passwd'/pool_passwd = ''/g" /etc/pgpool2/pgpool.conf
 
