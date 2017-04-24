@@ -48,11 +48,12 @@ sudo systemctl restart pgpool2
 
 # RedisクラスタのIPを取得しておく
 sudo apt-get install -y jq
-export REDIS_IP=`gcloud compute forwarding-rules describe redis-cluster-lb-forwarding-rule --region asia-northeast1 --format json | jq -r .IPAddress`
+#export REDIS_IP=`gcloud compute forwarding-rules describe redis-cluster-lb-forwarding-rule --region asia-northeast1 --format json | jq -r .IPAddress`
 
 # mastodonの設定
 sudo -u mastodon sh -c "cp $MASTODON_HOME/live/.env.production.sample $MASTODON_HOME/live/.env.production"
-sudo -u mastodon sh -c "sed -i -e \"s/REDIS_HOST=redis/REDIS_HOST=$REDIS_IP/g\" $MASTODON_HOME/live/.env.production"
+#sudo -u mastodon sh -c "sed -i -e \"s/REDIS_HOST=redis/REDIS_HOST=$REDIS_IP/g\" $MASTODON_HOME/live/.env.production"
+sudo -u mastodon sh -c "sed -i -e \"s/REDIS_HOST=redis/REDIS_HOST=prd-redis001/g\" $MASTODON_HOME/live/.env.production"
 sudo -u mastodon sh -c "sed -i -e \"s/DB_HOST=db/DB_HOST=localhost/g\" $MASTODON_HOME/live/.env.production"
 sudo -u mastodon sh -c "sed -i -e \"s/DB_USER=postgres/DB_USER=mastodon/g\" $MASTODON_HOME/live/.env.production"
 sudo -u mastodon sh -c "sed -i -e \"s/DB_NAME=postgres/DB_NAME=mastodon_production/g\" $MASTODON_HOME/live/.env.production"
